@@ -2,6 +2,7 @@
 Посчитайте, сколько чисел больше 0 ввёл пользователь. */
 
 // Вариант 1
+
 /* int[] GeneralArr = new int[100];
 int i = 0;
 string EnteringNum;
@@ -45,8 +46,10 @@ Print(GeneralArr);
 Console.WriteLine();
 CheckNumber(GeneralArr); */
 
+
 // Вариант 2 по материалам семинара
-Console.WriteLine("Введите числа через запятую");
+
+/* Console.WriteLine("Введите числа через запятую");
 string s = Console.ReadLine();
 string [] nums = s.Split(',');
 int NegativeNums = 0;
@@ -60,4 +63,22 @@ for (int i = 0; i < nums.Length; i ++)
     }
   }
 Console.WriteLine();
-Console.WriteLine($"Отрицательных чисел: {NegativeNums}");
+Console.WriteLine($"Отрицательных чисел: {NegativeNums}"); */
+
+/* Задача 43. Напишите программу, которая найдёт точку
+пересечения двух прямых, заданных уравнениями y = k1 *
+x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются
+пользователем. */
+
+Console.WriteLine("Введите параметр b1");
+double b1 = double.Parse(Console.ReadLine());
+Console.WriteLine("Введите параметр k1");
+double k1 = double.Parse(Console.ReadLine());
+Console.WriteLine("Введите параметр b2");
+double b2 = double.Parse(Console.ReadLine());
+Console.WriteLine("Введите параметр k2");
+double k2 = double.Parse(Console.ReadLine());
+
+double x = (b2 - b1) / (k1 - k2);
+double y = k1 * (b2-b1)/(k1-k2)+b1;
+Console.WriteLine($"Координаты точки пересечения M ({x}, {y})");
