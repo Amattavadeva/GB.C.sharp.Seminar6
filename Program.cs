@@ -66,8 +66,11 @@ Console.WriteLine();
 Console.WriteLine($"Отрицательных чисел: {NegativeNums}"); */
 
 /* Задача 43. Напишите программу, которая найдёт точку
-пересечения двух прямых, заданных уравнениями y = k1 *
-x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются
+пересечения двух прямых, заданных уравнениями 
+y = k1 * x + b1 >>>         k1*x + 1*y + b1 = 0
+y = k2 * x + b2 >>>         k2*x + 1*y + b2 = 0 
+                            a       b      c
+значения b1, k1, b2 и k2 задаются
 пользователем. */
 
 Console.WriteLine("Введите параметр b1");
@@ -78,7 +81,20 @@ Console.WriteLine("Введите параметр b2");
 double b2 = double.Parse(Console.ReadLine());
 Console.WriteLine("Введите параметр k2");
 double k2 = double.Parse(Console.ReadLine());
+double x;
+double y;
 
-double x = (b2 - b1) / (k1 - k2);
-double y = k1 * (b2-b1)/(k1-k2)+b1;
-Console.WriteLine($"Координаты точки пересечения M ({x}, {y})");
+if (k1 == k2)
+{
+    Console.WriteLine("Точек пересечения нет, прямые параллельны");
+}
+else if (k1 == k2 && k1 * b2 == k2 * b1 &&  b2 == b1 )
+{
+    System.Console.WriteLine("Прямые совпадают и имеют бесконечное количество решений");
+}
+else
+{
+    x = (b2 - b1) / (k1 - k2);
+    y = k1 * (b2-b1)/(k1-k2)+b1;
+   Console.WriteLine($"Координаты точки пересечения M ({x}, {y})");
+}
